@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>@𝐻𝐴𝑇𝐴𝐵𝐴 𝐵𝑈𝑅𝐺𝐸𝑅  | حطبة برجر</title>
+    <title>@ provide 𝐻𝐴𝑇𝐴𝐵𝐴 𝐵𝑈𝑅𝐺𝐸𝑅 | حطبة برجر</title>
     
-    <!-- خطوط متميزة تناسب شخصية "نكهة حطب" الجريئة -->
+    <!-- خطوط متميزة تناسب نكهة حطب الجريئة والفاخرة -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
     
     <style>
         :root {
-            --bg-body: #e5e5e7;          
-            --text-main: #080707;        /* أسود داكن صريح لضمان الوضوح فوق الشفافية */
-            --text-sub: #222222;         /* رمادي غامق جداً للنصوص الفرعية */
-            --border-color: #121212;     /* حدود سوداء واضحة مستوحاة من خط اللوجو */
-            --transition-main: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-body: #0a0a0a;          /* خلفية سوداء داكنة جداً */
+            --text-main: #ffffff;        /* أبيض ناصع للعناوين الرئيسية */
+            --text-sub: #b0b0b0;         /* رمادي فاتح أنيق جداً للنصوص الفرعية */
+            --border-color: rgba(255, 255, 255, 0.15); /* حدود بيضاء شفافة وناعمة */
+            --card-bg: rgba(0, 0, 0, 0.55); /* أسود شفاف جداً بمظهر زجاجي فاخر */
+            --transition-main: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         *{ margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,154 +34,175 @@
             padding: 40px 16px;
         }
 
-        /* صورة الخلفية واضحة تماماً وبأعلى دقة خلف المربع */
+        /* صورة الخلفية مدمجة بشكل داكن مائل للأبيض والأسود */
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background: url('IMG_1879.JPG') center/cover no-repeat;
-            opacity: 0.95; /* توضيح الخلفية بشكل شبه كامل */
-            filter: grayscale(100%) contrast(1.1); 
+            opacity: 0.25; /* خفضنا الإضاءة لتناسب ثيم الأبيض والأسود */
+            filter: grayscale(100%) contrast(1.2); /* تحويل الخلفية لأبيض وأسود بالكامل */
             z-index: 0;
             pointer-events: none;
         }
 
-        /* ── المربع الأبيض الشفاف جداً (Super Transparent) ── */
+        /* ── الحاوية الرئيسية الشفافة ── */
         .page-container {
             position: relative;
             z-index: 1;
             width: 100%;
-            max-width: 430px;
-            padding: 45px 24px;
+            max-width: 440px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            
-            /* خلفية بيضاء فائقة الشفافية مع تأثير زجاجي ناعم */
-            background: rgba(233, 229, 229, 0.25); 
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            
-            border: 2px solid var(--border-color);
+            background: rgba(124, 124, 124, 0.65); /* أرضية سوداء شفافة تعزل المحتوى بوضوح */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(225, 225, 225, 0.08);
             border-radius: 32px; 
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 30px 60px rgba(35, 35, 35, 0.8);
         }
 
-        /* ── شعار اللهب الجريء ── */
+        /* ── تنسيق مربع الشعار ── */
         .avatar-wrap {
-            width: 90px;
-            height: 90px;
-            border-radius: 22px;
-            border: 2px solid var(--border-color);
-            margin-bottom: 20px;
+            width: 95px;
+            height: 95px;
+            border-radius: 50%; /* دائري ناعم وفخم */
+            border: 2px solid var(--text-main); /* إطار أبيض ناصع حول اللوجو */
+            margin-bottom: 22px;
             background: #121212; 
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            overflow: hidden;
         }
-        .avatar-wrap .fire-icon {
-            color: #ffffff;
-            font-size: 2.3rem;
+        .avatar-wrap .logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ── النصوص ── */
         .name {
-            font-size: 23px;
-            font-weight: 900;
+            font-size: 21px;
+            font-weight: 800;
             color: var(--text-main);
             text-align: center;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             letter-spacing: -0.5px;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6); /* ظل خفيف خلف النص لزيادة الوضوح */
         }
         .bio {
-            font-size: 13.5px;
-            font-weight: 700;
-            color: var(--text-sub);
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-sub); /* رمادي أنيق */
             text-align: center;
-            line-height: 1.6;
-            margin-bottom: 26px;
+            letter-spacing: 1px;
+            margin-bottom: 28px;
             max-width: 320px;
-            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
         }
 
         /* ── شبكات التواصل الاجتماعي ── */
         .social-bar {
             display: flex;
             justify-content: center;
-            gap: 14px;
-            margin-bottom: 30px;
+            gap: 12px;
+            margin-bottom: 32px;
         }
         .social-bar a {
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
-            background: rgb(255, 252, 252); /* خلفية شبه شفافة للأزرار */
-            border: 2px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-main);
             text-decoration: none;
             transition: var(--transition-main);
-            backdrop-filter: blur(4px);
         }
         .social-bar a:hover {
             transform: translateY(-4px);
             background: var(--text-main);
-            color: #ffffff;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+            color: #121212;
+            border-color: var(--text-main);
         }
 
-        /* ── الأزرار الاحترافية الشفافة ── */
+        /* ── تصميم البطاقات الفاخرة باللون الأسود والأبيض ── */
         .links-group {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
         .btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 12px;
+            justify-content: space-between;
             width: 100%;
-            padding: 16px 20px;
-            border-radius: 14px; 
-            border: 2px solid var(--border-color);
-            background: rgb(255, 255, 255); /* أزرار شفافة مريحة للعين */
+            padding: 18px 24px;
+            border-radius: 20px; /* زوايا منحنية ناعمة */
+            border: 1px solid var(--border-color);
+            background: var(--card-bg); /* أسود شفاف جداً */
             color: var(--text-main);
-            font-size: 15px;
-            font-weight: 800; 
             text-decoration: none;
             transition: var(--transition-main);
             position: relative;
-            backdrop-filter: blur(4px);
+            box-shadow: 0 4px 15px rgba(198, 197, 197, 0.816);
         }
+        
+        /* تأثير التمرير (Hover) */
         .btn:hover {
-            background: var(--text-main);
-            color: #ffffff;
+            background: rgba(227, 227, 227, 0.618); /* تأثير إضاءة خفيفة عند الوقوف على الزر */
+            border-color: var(--text-main);
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 25px rgba(144, 138, 138, 0.1);
         }
 
-        .btn .ico {
-            width: 20px; height: 20px;
-            display: flex; align-items: center; justify-content: center;
+        /* حاوية النصوص داخل البطاقة */
+        .btn-text-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            flex-grow: 1;
         }
 
-        /* زر قائمة الطعام المميز بالأسود بالكامل لكي يبرز بوضوح */
-        .btn.primary {
+        .btn-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .btn-subtitle {
+            font-size: 10.5px;
+            font-weight: 600;
+            color: var(--text-sub); /* رمادي هادئ للنص الفرعي */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* دائرة الأيقونة (تصميم أسود وأبيض فاخر) */
+        .btn .ico-wrap {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--text-sub);
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            transition: var(--transition-main);
+            margin-right: 12px;
+        }
+
+        .btn:hover .ico-wrap {
             background: var(--text-main);
-            color: #ffffff;
-            border: 2px solid var(--border-color);
-        }
-        .btn.primary:hover {
-            background: #afafaf;
-            color: #ffffff;
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: #0a0a0a;
+            border-color: var(--text-main);
         }
 
         /* ── حركات دخول العناصر عند الفتح ── */
@@ -190,41 +212,6 @@
         }
         .ani { opacity: 0; animation: fadeInRise 0.6s ease-out forwards; }
 
-        /* ── كود الـ QR ── */
-        .qr-widget {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            z-index: 20;
-        }
-        .qr-card {
-            width: 70px; height: 70px;
-            background: #ffffff;
-            border: 2px solid var(--border-color);
-            border-radius: 14px;
-            padding: 6px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            transition: var(--transition-main);
-        }
-        .qr-card:hover {
-            transform: scale(1.1) translateY(-4px);
-        }
-        .qr-card img {
-            width: 100%; height: 100%;
-            border-radius: 8px;
-            display: block;
-        }
-        .qr-text {
-            font-size: 10px;
-            font-weight: 800;
-            color: var(--text-main);
-            text-align: center;
-        }
-
         /* ── الفوتر ── */
         .footer {
             margin-top: 40px;
@@ -233,7 +220,7 @@
         .footer span {
             font-size: 11px;
             font-weight: 800;
-            color: var(--text-main);
+            color: var(--text-sub);
             letter-spacing: 0.5px;
         }
 
@@ -244,116 +231,111 @@
         /* ── الهواتف ── */
         @media(max-width:480px){
             body { padding: 20px 12px; }
-            .page-container { padding: 35px 18px; border-radius: 28px; }
-            .avatar-wrap { width: 80px; height: 80px; border-radius: 18px; }
-            .name { font-size: 20px; }
-            .bio { font-size: 12.5px; }
-            .btn { font-size: 14px; padding: 14px 18px; }
-            .qr-widget { display: none; } 
+            .page-container { padding: 35px 16px; border-radius: 28px; }
+            .avatar-wrap { width: 85px; height: 85px; }
+            .name { font-size: 19px; }
+            .btn { padding: 16px 20px; }
+            .btn-title { font-size: 14px; }
+            .btn-subtitle { font-size: 9.5px; }
+            .btn .ico-wrap { width: 38px; height: 38px; }
         }
-
-
-        .avatar-wrap {
-    width: 90px;
-    height: 90px;
-    border-radius: 22px;
-    border: 2px solid var(--border-color);
-    margin-bottom: 20px;
-    background: #121212; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    overflow: hidden; /* لمنع خروج زوايا الصورة عن إطار المربع المنحني */
-}
-
-.avatar-wrap .logo-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* لجعل الشعار يملأ المربع بالكامل وبشكل متناسق */
-}
-
-        /* ── الكمبيوتر ── */
-        @media(min-width:769px){
-            .desktop-label {
-                position: fixed;
-                bottom: 25px;
-                left: 25px;
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                z-index: 20;
-            }
-            .desktop-label span {
-                font-size: 11px;
-                font-weight: 800;
-                color: #222;
-            }
-        }
-        @media(max-width:768px){ .desktop-label { display: none; } }
     </style>
 </head>
 <body>
 
 <div class="page-container">
 
-    <!-- شعار اللهب الجريء -->
-    <!-- شعار نكهة حطب الخاص بك -->
-<div class="avatar-wrap ani" style="animation-delay: 0.1s">
-    <img src="logo_500x500.png" alt="Hataba Logo" class="logo-img">
-</div>
+    <!-- شعار نكهة حطب الدائري المطور -->
+    <div class="avatar-wrap ani" style="animation-delay: 0.1s">
+        <img src="logo_500x500.png" alt="Hataba Logo" class="logo-img">
+    </div>
 
-    <!-- اسم المطعم بوزن عريض يتطابق مع اللوجو -->
-    <h1 class="name ani" style="animation-delay: 0.18s">نكهة حطب | 𝐻𝐴𝑇𝐴𝐵𝐴 𝐵𝑈𝑅𝐺𝐸𝑅 </h1>
+    <!-- اسم المطعم -->
+    <h1 class="name ani" style="animation-delay: 0.18s">نكهة حطب | 𝐻𝐴𝑇𝐴𝐵𝐴 𝐵𝑈𝑅𝐺𝐸𝑅</h1>
 
-    <!-- الوصف -->
-    <p class="bio ani" style="animation-delay: 0.26s">   𝑅𝐸𝐴𝐿 𝐹𝐿𝐴𝑉𝑂𝑅-𝑅𝐸𝐴𝐿 𝐹𝐼𝑅𝐸-𝑅𝐸𝐴𝐿 𝐵𝑈𝑅𝐺𝐸𝑅</p>
+    <!-- الوصف باللون الرمادي الراقي -->
+    <p class="bio ani" style="animation-delay: 0.26s">REAL FLAVOR • REAL FIRE • REAL BURGER</p>
 
     <!-- قنوات التواصل الاجتماعي -->
     <div class="social-bar ani" style="animation-delay: 0.34s">
         <a href="https://www.instagram.com/hataba.sa?igsh=MTcyaWs1aXNubTlmag%3D%3D&utm_source=qr" target="_blank" title="Instagram">
-            <span class="iconify" data-icon="mdi:instagram" data-width="21"></span>
+            <span class="iconify" data-icon="mdi:instagram" data-width="19"></span>
         </a>
         <a href="https://www.tiktok.com/@hataba.sa?_r=1&_t=zs-94oh88270mc" target="_blank" title="TikTok">
-            <span class="iconify" data-icon="ic:baseline-tiktok" data-width="21"></span>
+            <span class="iconify" data-icon="ic:baseline-tiktok" data-width="19"></span>
         </a>
         <a href="https://www.snapchat.com/@h.ataba0x" target="_blank" title="Snapchat">
-            <span class="iconify" data-icon="mdi:snapchat" data-width="21"></span>
+            <span class="iconify" data-icon="mdi:snapchat" data-width="19"></span>
         </a>
     </div>
 
-    <!-- مجموعة الروابط -->
+    <!-- مجموعة الروابط بتصميم أبيض وأسود شفاف -->
     <div class="links-group">
 
-        <!-- زر المنيو المميز بالأسود -->
-        <a href="https://hatababurger.foodics.online/menu/-239557.com" target="" class="btn  ani" style="animation-delay: 0.42s">
-            <span class="ico"><span class="iconify" data-icon="mdi:silverware-fork-knife"></span></span>
-            قائمة الطعام | Menu
+        <!-- 1. قائمة الطعام -->
+        <a href="https://hatababurger.foodics.online/menu/-239557.com" class="btn ani" style="animation-delay: 0.42s">
+            <div class="btn-text-content">
+                <span class="btn-title">قائمة الطعام</span>
+                <span class="btn-subtitle">EXQUISITE MENU</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="mdi:silverware-fork-knife" data-width="20"></span>
+            </div>
         </a>
 
+        <!-- 2. برنامج الولاء -->
         <a href="https://loyapro.com/c-r/NzkzOQ==" target="_blank" class="btn ani" style="animation-delay: 0.48s">
-            <span class="ico"><span class="iconify" data-icon="mdi:crown-star-outline"></span></span>
-            برنامج الولاء | Loyalty Program
+            <div class="btn-text-content">
+                <span class="btn-title">برنامج الولاء</span>
+                <span class="btn-subtitle">GET YOUR LOYALTY CARD</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="mdi:crown-star-outline" data-width="20"></span>
+            </div>
         </a>
 
+        <!-- 3. موقعنا صبيا -->
         <a href="https://www.google.com/maps?q=%D9%86%D9%83%D9%87%D8%A9+%D8%AD%D8%B7%D8%B8%D9%87+%7C+HATABA+BURGER%D8%8C+GBSB8222%D8%8C+3990+King+Abdul+Aziz+Rd%D8%8C+8222,+Sabya+85298" target="_blank" class="btn ani" style="animation-delay: 0.54s">
-            <span class="ico"><span class="iconify" data-icon="mdi:map-marker-outline"></span></span>
-            موقعنا - صبيا | Our Location
+            <div class="btn-text-content">
+                <span class="btn-title">موقعنا - صبيا</span>
+                <span class="btn-subtitle">SABYA, SAUDI ARABIA</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="mdi:map-marker-outline" data-width="20"></span>
+            </div>
         </a>
 
+        <!-- 4. تيك توك -->
         <a href="https://www.tiktok.com/@hataba.sa?_r=1&_t=zs-94oh88270mc" target="_blank" class="btn ani" style="animation-delay: 0.60s">
-            <span class="ico"><span class="iconify" data-icon="ic:baseline-tiktok"></span></span>
-            تيك توك | TikTok
+            <div class="btn-text-content">
+                <span class="btn-title">تيك توك</span>
+                <span class="btn-subtitle">TIKTOK OFFICIAL</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="ic:baseline-tiktok" data-width="20"></span>
+            </div>
         </a>
 
+        <!-- 5. انستغرام -->
         <a href="https://www.instagram.com/hataba.sa?igsh=MTcyaWs1aXNubTlmag%3D%3D&utm_source=qr" target="_blank" class="btn ani" style="animation-delay: 0.66s">
-            <span class="ico"><span class="iconify" data-icon="mdi:instagram"></span></span>
-            انستغرام | Instagram
+            <div class="btn-text-content">
+                <span class="btn-title">انستغرام</span>
+                <span class="btn-subtitle">INSTAGRAM FEED</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="mdi:instagram" data-width="20"></span>
+            </div>
         </a>
 
+        <!-- 6. سناب شات -->
         <a href="https://www.snapchat.com/@h.ataba0x" target="_blank" class="btn ani" style="animation-delay: 0.72s">
-            <span class="ico"><span class="iconify" data-icon="mdi:snapchat"></span></span>
-            سناب شات | Snapchat
+            <div class="btn-text-content">
+                <span class="btn-title">سناب شات</span>
+                <span class="btn-subtitle">SNAPCHAT STORIES</span>
+            </div>
+            <div class="ico-wrap">
+                <span class="iconify" data-icon="mdi:snapchat" data-width="20"></span>
+            </div>
         </a>
 
     </div>
@@ -364,5 +346,6 @@
     </div>
 
 </div>
+
 </body>
 </html>
